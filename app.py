@@ -69,7 +69,7 @@ insertSpace()
 # st.header("Area by Crime Type")
 st.markdown("<h2 style='text-align: center; color: white;'>Locations and summary by Crime Type</h2>", unsafe_allow_html=True)
 select = st.selectbox('Crime Types ',['ARSON', 'ASSAULT', 'BATTERY', 'BURGLARY', 'CONCEALED CARRY LICENSE VIOLATION', 'CRIM SEXUAL ASSAULT', 'CRIMINAL DAMAGE', 'CRIMINAL SEXUAL ASSAULT', 'CRIMINAL TRESPASS', 'DECEPTIVE PRACTICE', 'GAMBLING', 'HOMICIDE', 'HUMAN TRAFFICKING', 'INTERFERENCE WITH PUBLIC OFFICER', 'INTIMIDATION', 'KIDNAPPING', 'LIQUOR LAW VIOLATION', 'MOTOR VEHICLE THEFT', 'NARCOTICS', 'NON - CRIMINAL', 'NON-CRIMINAL', 'OBSCENITY', 'OFFENSE INVOLVING CHILDREN', 'OTHER NARCOTIC VIOLATION', 'OTHER OFFENSE', 'PROSTITUTION', 'PUBLIC INDECENCY','PUBLIC PEACE VIOLATION', 'ROBBERY', 'SEX OFFENSE', 'STALKING', 'THEFT', 'WEAPONS VIOLATION'])
-subsetted_data = data_frame[data_frame['primary type']==select]
+subsetted_data = data_frame[data_frame['primary_type']==select]
 st.markdown('**Number of Crimes:** %i' % subsetted_data.shape[0])
 st.markdown('**Arrests:** %i' % subsetted_data['arrest'].sum())
 st.table(subsetted_data['location description'].value_counts().head(10))
