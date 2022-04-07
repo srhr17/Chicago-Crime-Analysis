@@ -4,7 +4,7 @@ import numpy as np
 import pydeck as pdk
 import plotly.express as px
 
-DATA_URL=("Crimes_-_2001_to_Present.csv")
+DATA_URL=("https://data.cityofchicago.org/resource/ijzp-q8t2.csv")
 
 st.set_page_config(
         page_title="Crime Analysis in Chicago",
