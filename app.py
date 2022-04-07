@@ -17,7 +17,7 @@ st.markdown(" <h5 style='text-align: center;font-weight: normal;letter-spacing:5
 
 @st.cache(persist=True)
 def loadData(row_limit):
-    df = pd.read_csv(DATA_URL,nrows=row_limit,parse_dates=['Date'])
+    df = pd.read_csv(DATA_URL,nrows=row_limit,parse_dates=['date'])
     df.drop(columns=['id','description','fbi_code','x_coordinate','y_coordinate','year','updated_on','location'],inplace=True)
     df.dropna(subset=['latitude','longitude'],inplace=True)
     df.rename(lambda x: str(x).lower(),axis='columns',inplace=True)
