@@ -72,7 +72,7 @@ select = st.selectbox('Crime Types ',['ARSON', 'ASSAULT', 'BATTERY', 'BURGLARY',
 subsetted_data = data_frame[data_frame['primary_type']==select]
 st.markdown('**Number of Crimes:** %i' % subsetted_data.shape[0])
 st.markdown('**Arrests:** %i' % subsetted_data['arrest'].sum())
-st.table(subsetted_data['location description'].value_counts().head(10))
+st.table(subsetted_data['location_description'].value_counts().head(10))
 st.map(subsetted_data[['latitude','longitude']].dropna(how="any"))
 st.subheader("Check the box to see the data by crime type")    
 if st.checkbox('Show Data by Crime Type',False):
